@@ -20,7 +20,7 @@ class Picture
     private $top;
 
     /**
-     * @var Frame
+     * @var Frame[]
      */
     private $frames = [];
 
@@ -52,47 +52,21 @@ class Picture
     private function getFrame(): Frame
     {
         return new Frame(
-            $this->left,
-            $this->top,
+            new Position($this->left, $this->top),
+            new Size($this->size, $this->size),
             new Color(
-                rand(0, 255),
-                rand(0, 255),
-                rand(0, 255)
+                rand(0, 51) * 5,
+                rand(0, 51) * 5,
+                rand(0, 51) * 5
             )
         );
     }
 
     /**
-     * @return string
+     * @return Frame[]
      */
-    public function render(): string
+    public function getFrames(): array
     {
-        $content = '';
-
-        foreach ($this->frames as $frame) {
-            $content .= $this->renderFrame($frame);
-        }
-
-        return $content;
-    }
-
-    /**
-     * @param Frame $frame
-     *
-     * @return string
-     */
-    private function renderFrame(Frame $frame): string
-    {
-        return '<div style="' .
-            'width: ' . $this->size . 'px; ' .
-            'height: ' . $this->size . 'px; ' .
-            'position: absolute; ' .
-            'left: ' . $frame->getLeft() . 'px;' .
-            'top: ' . $frame->getTop() . 'px; ' .
-            'background: rgb(' .
-            $frame->getColor()->getRed() . ',' .
-            $frame->getColor()->getGreen() . ',' .
-            $frame->getColor()->getBlue() .
-            ')"></div>';
+        return $this->frames;
     }
 }

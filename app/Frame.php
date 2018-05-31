@@ -10,14 +10,14 @@ namespace App;
 class Frame
 {
     /**
-     * @var int
+     * @var Position
      */
-    private $left;
+    private $position;
 
     /**
-     * @var int
+     * @var Size
      */
-    private $top;
+    private $size;
 
     /**
      * @var Color
@@ -26,31 +26,31 @@ class Frame
 
     /**
      * Frame constructor.
-     * @param int $left
-     * @param int $top
+     * @param Position $position
+     * @param Size $size
      * @param Color $color
      */
-    public function __construct(int $left, int $top, Color $color)
+    public function __construct(Position $position, Size $size, Color $color)
     {
-        $this->left = $left;
-        $this->top = $top;
+        $this->position = $position;
+        $this->size = $size;
         $this->color = $color;
     }
 
     /**
-     * @return int
+     * @return Position
      */
-    public function getLeft(): int
+    public function getPosition(): Position
     {
-        return $this->left;
+        return $this->position;
     }
 
     /**
-     * @return int
+     * @return Size
      */
-    public function getTop(): int
+    public function getSize(): Size
     {
-        return $this->top;
+        return $this->size;
     }
 
     /**
