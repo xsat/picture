@@ -10,6 +10,12 @@ namespace App;
 class Picture
 {
     /**
+     * @var Size
+     */
+    private $size;
+
+
+    /**
      * @var int
      */
     private $left;
@@ -30,11 +36,6 @@ class Picture
     private $grid = [];
 
     /**
-     * @var Size
-     */
-    private $size;
-
-    /**
      * Picture constructor.
      */
     public function __construct()
@@ -49,7 +50,6 @@ class Picture
         for ($this->left = 0; $this->left <= 1200; $this->left = $this->left + $this->size->getWight()) {
             for ($this->top = 0; $this->top <= 600; $this->top = $this->top + $this->size->getHeight()) {
                 $frame = $this->getFrame();
-
                 $this->frames[] = $frame;
                 $this->grid[$this->left][$this->top] = $frame;
             }
