@@ -7,7 +7,7 @@ namespace App;
  *
  * @package App
  */
-class Application
+class Application extends Picture
 {
     /**
      * @return string
