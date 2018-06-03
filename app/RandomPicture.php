@@ -3,17 +3,16 @@
 namespace App;
 
 /**
- * Class Picture
+ * Class RandomPicture
  *
  * @package App
  */
-class Picture
+class RandomPicture implements FramesInterface
 {
     /**
      * @var Size
      */
     private $size;
-
 
     /**
      * @var int
@@ -36,7 +35,7 @@ class Picture
     private $grid = [];
 
     /**
-     * Picture constructor.
+     * RandomPictureRandomPicture constructor.
      */
     public function __construct()
     {
@@ -64,11 +63,13 @@ class Picture
         return new Frame(
             new Position($this->left, $this->top),
             $this->size,
-            new Color(
-                mt_rand(0, 51) * 5,
-                mt_rand(0, 51) * 5,
-                mt_rand(0, 51) * 5
-            )
+//            new Color(
+//                mt_rand(0, 51) * 5,
+//                mt_rand(0, 51) * 5,
+//                mt_rand(0, 51) * 5
+//            )
+
+            mt_rand(0, 1) ? new Color(0, 0, 0) : new Color(255, 255, 255)
         );
     }
 

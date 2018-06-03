@@ -7,19 +7,44 @@ namespace App;
  *
  * @package App
  */
-class Application extends Picture
+class Application implements ApplicationInterface
 {
+    /**
+     * @var View
+     */
+    private $view;
+
+    /**
+     * @var string
+     */
+    private $layout = 'index';
+    /**
+     *
+     * @var string
+     */
+    private $current = 'main';
+
+    /**
+     * Application constructor.
+     */
+    public function __construct()
+    {
+        $this->view = new View();
+    }
+
     /**
      * @return string
      */
-    public function show(): string
+    public function run(): string
     {
-        ob_start();
+        return $this->view->particle($this->layout);
+    }
 
-        include_once __DIR__ .
-            DIRECTORY_SEPARATOR . 'Views' .
-            DIRECTORY_SEPARATOR . 'index.phtml';
-
-        return ob_get_clean();
+    /**
+     * @return null|string
+     */
+    public function render(): ?string
+    {
+        return $this->view->particle($this->current);
     }
 }
