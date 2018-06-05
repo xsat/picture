@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Picture;
 
 /**
  * Class Color
  *
- * @package App
+ * @package App\Picture
  */
 class Color
 {

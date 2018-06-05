@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Picture;
 
 /**
  * Interface FramesInterface
  *
- * @package App
+ * @package App\Picture
  */
 interface FramesInterface
 {

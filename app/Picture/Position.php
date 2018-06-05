@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Picture;
 
 /**
  * Class Position
  *
- * @package App
+ * @package App\Picture
  */
 class Position
 {

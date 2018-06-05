@@ -12,5 +12,10 @@ interface ApplicationInterface
     /**
      * @return null|string
      */
+    public function title(): ?string;
+
+    /**
+     * @return null|string
+     */
     public function render(): ?string;
 }

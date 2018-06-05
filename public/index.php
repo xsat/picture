@@ -7,4 +7,4 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Application;
 
-echo (new Application())->run();
+(new Application())->run();
