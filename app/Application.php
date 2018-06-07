@@ -7,7 +7,7 @@ namespace App;
  *
  * @package App
  */
-class Application implements ApplicationInterface
+class Application extends Snake implements ApplicationInterface
 {
     private const LAYOUT = 'index.phtml';
     private const HOME_PARTICLE = 'home.phtml';
